@@ -1,0 +1,78 @@
+{
+  "name": "@fnordsoft/golem",
+  "version": "0.0.0",
+  "description": "esbuild manager",
+  "author": "Tristram Woolf @woolfsystems",
+  "bin": {
+    "golem": "./bin/run"
+  },
+  "homepage": "https://github.com/woolfsystems/golem-build",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "repository": "woolfsystems/golem-build",
+  "files": [
+    "/bin",
+    "/dist",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "dependencies": {
+    "@oclif/core": "^1.21.0",
+    "@oclif/plugin-help": "^5",
+    "@oclif/plugin-plugins": "^2.1.7"
+  },
+  "devDependencies": {
+    "@oclif/test": "^2.2.13",
+    "@types/chai": "^4",
+    "@types/cli-color": "^2.0.2",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.18.7",
+    "chai": "^4",
+    "cli-color": "^2.0.3",
+    "esbuild": "^0.16.7",
+    "eslint": "^7.32.0",
+    "eslint-config-oclif": "^4",
+    "eslint-config-oclif-typescript": "^1.0.3",
+    "mocha": "^9",
+    "oclif": "^3",
+    "shx": "^0.3.3",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4"
+  },
+  "oclif": {
+    "bin": "golem",
+    "dirname": "golem",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins"
+    ],
+    "topicSeparator": " ",
+    "topics": {
+      "build": {
+        "description": "build project"
+      },
+      "watch": {
+        "description": "run build in watch mode"
+      }
+    }
+  },
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "lint": "eslint . --ext .ts --config .eslintrc",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "posttest": "yarn lint",
+    "prepack": "yarn build && oclif manifest && oclif readme",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif readme && git add README.md"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "bugs": "https://github.com/woolfsystems/golem-build/issues",
+  "keywords": [
+    "oclif"
+  ],
+  "types": "dist/index.d.ts"
+}

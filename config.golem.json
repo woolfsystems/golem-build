@@ -1,0 +1,20 @@
+{
+    "baseDir": "src",
+    "outDir": "dist",
+    "watchMode": true,
+    "builds": {
+        "frontend": {
+            "entryPoints": ["server/index.ts"],
+            "bundle": true,
+            "outfile": "index.js",
+            "platform": "node"
+        },
+        "backend": {
+            "entryPoints": ["client/index.tsx"],
+            "bundle": true,
+            "outfile": "public/index.js",
+            "requires": ["frontend"],
+            "watch": "nodemon"
+        }
+    }
+}
