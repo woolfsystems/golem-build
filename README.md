@@ -4,6 +4,7 @@ golem
 esbuild project manager
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
+[![Known Vulnerabilities](https://snyk.io/test/github/woolfsystems/golem-build/badge.svg)](https://snyk.io/test/github/woolfsystems/golem-build)
 [![Latest Stable Version](https://img.shields.io/npm/v/@fnord/golem.svg)](https://www.npmjs.com/package/@fnord/golem)
 [![NPM Downloads](https://img.shields.io/npm/dt/@fnord/golem.svg)](https://www.npmjs.com/package/@fnord/golem)
 [![License](https://img.shields.io/npm/l/@fnord/golem.svg)](https://www.npmjs.com/package/@fnord/golem)
