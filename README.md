@@ -1,4 +1,4 @@
-Golem
+golem
 =================
 
 esbuild project manager
