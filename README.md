@@ -4,10 +4,10 @@ golem
 esbuild project manager
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/oclif-hello-world.svg)](https://npmjs.org/package/@fnord/golem)
-<!-- [![CircleCI](https://circleci.com/gh/oclif/hello-world/tree/main.svg?style=shield)](https://circleci.com/gh/oclif/hello-world/tree/main) -->
-[![Downloads/week](https://img.shields.io/npm/dw/oclif-hello-world.svg)](https://npmjs.org/package/@fnord/golem)
-<!-- [![License](https://img.shields.io/npm/l/oclif-hello-world.svg)](https://github.com/oclif/hello-world/blob/main/package.json) -->
+[![Latest Stable Version](https://img.shields.io/npm/v/@fnord/golem.svg)](https://www.npmjs.com/package/@fnord/golem)
+[![NPM Downloads](https://img.shields.io/npm/dt/@fnord/golem.svg)](https://www.npmjs.com/package/@fnord/golem)
+[![License](https://img.shields.io/npm/l/@fnord/golem.svg)](https://www.npmjs.com/package/@fnord/golem)
+
 
 <!-- toc -->
 * [Usage](#usage)
