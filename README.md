@@ -10,11 +10,25 @@ esbuild project manager
 <!-- [![License](https://img.shields.io/npm/l/oclif-hello-world.svg)](https://github.com/oclif/hello-world/blob/main/package.json) -->
 
 <!-- toc -->
-* [Configuration](#configuration)
 * [Usage](#usage)
+* [Configuration](#configuration)
 * [Commands](#commands)
 <!-- tocstop -->
-
+# Usage
+<!-- usage -->
+```sh-session
+$ npm install -g @fnord/golem
+$ golem COMMAND
+running command...
+$ golem (--version)
+@fnord/golem/0.2.1 linux-x64 node-v16.18.0
+$ golem --help [COMMAND]
+USAGE
+  $ golem COMMAND
+...
+```
+<!-- usagestop -->
+---
 # Configuration
 If you had a `src` folder with 2 subfolders: client, and server, you might configure your project by putting the following in `config.golem.json` at the root of your project:
 ```json
@@ -57,20 +71,6 @@ the destination file or file pattern for non-bundled builds.
 <!-- array of builds that are required to execute the result of this build. -->
 
 ---
-# Usage
-<!-- usage -->
-```sh-session
-$ npm install -g @fnord/golem
-$ golem COMMAND
-running command...
-$ golem (--version)
-@fnord/golem/0.2.1 linux-x64 node-v16.18.0
-$ golem --help [COMMAND]
-USAGE
-  $ golem COMMAND
-...
-```
-<!-- usagestop -->
 # Commands
 <!-- commands -->
 * [`golem build`](#golem-build)
