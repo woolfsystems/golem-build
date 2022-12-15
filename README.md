@@ -10,9 +10,53 @@ esbuild project manager
 <!-- [![License](https://img.shields.io/npm/l/oclif-hello-world.svg)](https://github.com/oclif/hello-world/blob/main/package.json) -->
 
 <!-- toc -->
+* [Configuration](#configuration)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+
+# Configuration
+If you had a `src` folder with 2 subfolders: client, and server, you might configure your project by putting the following in `config.golem.json` at the root of your project:
+```json
+{
+    "baseDir": "src",
+    "outDir": "dist",
+    "watchMode": true,
+    "builds": {
+        "frontend": {
+            "entryPoints": ["server/index.ts"],
+            "bundle": true,
+            "outfile": "index.js",
+            "platform": "node"
+        },
+        "backend": {
+            "entryPoints": ["client/index.tsx"],
+            "bundle": true,
+            "outfile": "public/index.js",
+            "requires": ["frontend"],
+            "watch": "nodemon"
+        }
+    }
+}
+```
+### Global Properties
+#### baseDir
+the directory to prepend to all build entrypoints.
+#### outDir
+the directory to prepend to all build outputs.
+#### builds
+an object containing the distinct builds, for example frontend and backend.
+### Build Properties
+#### entryPoints
+an array containing the build entrypoints.
+#### bundle
+enable bundling of output into a single file.
+#### outfile
+the destination file or file pattern for non-bundled builds.
+<!-- #### requires // TODO -->
+<!-- array of builds that are required to execute the result of this build. -->
+
+---
 # Usage
 <!-- usage -->
 ```sh-session
