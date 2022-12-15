@@ -1,7 +1,7 @@
-oclif-hello-world
+Golem
 =================
 
-oclif example Hello World CLI
+esbuild project manager
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/oclif-hello-world.svg)](https://npmjs.org/package/oclif-hello-world)
@@ -16,11 +16,11 @@ oclif example Hello World CLI
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g @fnordsoft/golem
+$ npm install -g @fnord/golem
 $ golem COMMAND
 running command...
 $ golem (--version)
-@fnordsoft/golem/0.1.0 linux-x64 node-v16.18.0
+@fnord/golem/0.1.0 linux-x64 node-v16.18.0
 $ golem --help [COMMAND]
 USAGE
   $ golem COMMAND
