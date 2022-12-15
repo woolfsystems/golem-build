@@ -22,7 +22,7 @@
     "@oclif/plugin-plugins": "^2.1.7"
   },
   "devDependencies": {
-    "@oclif/test": "^2.2.13",
+    "@oclif/test": "^2.2.15",
     "@types/chai": "^4",
     "@types/cli-color": "^2.0.2",
     "@types/mocha": "^9.0.0",
