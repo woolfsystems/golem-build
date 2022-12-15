@@ -16,11 +16,11 @@ oclif example Hello World CLI
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g golem
+$ npm install -g @fnordsoft/golem
 $ golem COMMAND
 running command...
 $ golem (--version)
-golem/0.0.0 linux-x64 node-v16.18.0
+@fnordsoft/golem/0.1.0 linux-x64 node-v16.18.0
 $ golem --help [COMMAND]
 USAGE
   $ golem COMMAND
@@ -29,8 +29,7 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`golem hello PERSON`](#golem-hello-person)
-* [`golem hello world`](#golem-hello-world)
+* [`golem build`](#golem-build)
 * [`golem help [COMMAND]`](#golem-help-command)
 * [`golem plugins`](#golem-plugins)
 * [`golem plugins:install PLUGIN...`](#golem-pluginsinstall-plugin)
@@ -41,46 +40,27 @@ USAGE
 * [`golem plugins:uninstall PLUGIN...`](#golem-pluginsuninstall-plugin-1)
 * [`golem plugins:uninstall PLUGIN...`](#golem-pluginsuninstall-plugin-2)
 * [`golem plugins update`](#golem-plugins-update)
+* [`golem watch`](#golem-watch)
 
-## `golem hello PERSON`
+## `golem build`
 
-Say hello
+Build project
 
 ```
 USAGE
-  $ golem hello [PERSON] -f <value>
-
-ARGUMENTS
-  PERSON  Person to say hello to
+  $ golem build [-c <value>]
 
 FLAGS
-  -f, --from=<value>  (required) Who is saying hello
+  -c, --config=<value>  Project file if not config.golem.ts
 
 DESCRIPTION
-  Say hello
+  Build project
 
 EXAMPLES
-  $ oex hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
+  $ golem build --config ./other.golem.ts
 ```
 
-_See code: [dist/commands/hello/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.0.0/dist/commands/hello/index.ts)_
-
-## `golem hello world`
-
-Say hello world
-
-```
-USAGE
-  $ golem hello world
-
-DESCRIPTION
-  Say hello world
-
-EXAMPLES
-  $ golem hello world
-  hello world! (./src/commands/hello/world.ts)
-```
+_See code: [dist/commands/build/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.1.0/dist/commands/build/index.ts)_
 
 ## `golem help [COMMAND]`
 
@@ -331,4 +311,24 @@ FLAGS
 DESCRIPTION
   Update installed plugins.
 ```
+
+## `golem watch`
+
+Build project in watch mode
+
+```
+USAGE
+  $ golem watch [-c <value>]
+
+FLAGS
+  -c, --config=<value>  Project file if not golem.config.ts
+
+DESCRIPTION
+  Build project in watch mode
+
+EXAMPLES
+  $ golem watch --config ./other.ts
+```
+
+_See code: [dist/commands/watch/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.1.0/dist/commands/watch/index.ts)_
 <!-- commandsstop -->
