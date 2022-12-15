@@ -84,8 +84,8 @@ export const buildProject = (projectDef: GolemProject, watch?: boolean): Promise
         }
 
         const [key] = buildResult?.value || ['unknown', undefined]
-        console.log(`[${green('+')}] ${watch ? 'watching' : 'built'} ${bold(key)}`, buildResult?.status)
-        console.dir(buildResult)
+        console.log(`[${green('+')}] ${watch ? 'watching' : 'built'} ${bold(key)}`)
+        // console.dir(buildResult)
       })
       resolve(resultList)
     })
