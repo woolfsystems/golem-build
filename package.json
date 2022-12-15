@@ -19,10 +19,10 @@
   "dependencies": {
     "@oclif/core": "^1.21.0",
     "@oclif/plugin-help": "^5",
-    "@oclif/plugin-plugins": "^2.1.7"
+    "@oclif/plugin-plugins": "^2.1.8"
   },
   "devDependencies": {
-    "@oclif/test": "^2.2.13",
+    "@oclif/test": "^2.2.15",
     "@types/chai": "^4",
     "@types/cli-color": "^2.0.2",
     "@types/mocha": "^9.0.0",
@@ -35,7 +35,7 @@
     "eslint-config-oclif-typescript": "^1.0.3",
     "mocha": "^9",
     "oclif": "^3",
-    "shx": "^0.3.3",
+    "shx": "^0.3.4",
     "ts-node": "^10.9.1",
     "tslib": "^2.4.1",
     "typescript": "^4.9.4"
