@@ -21,7 +21,7 @@ export default class Build extends Command {
     const {flags} = await this.parse(Build)
     const projectDefinition = await loadProjectFile(flags?.config || './config.golem.json')
 
-    buildProject(projectDefinition, true).catch(([buildKey, buildFailure]) => {
+    buildProject(projectDefinition).catch(([buildKey, buildFailure]) => {
       for (const key in buildFailure.errors) {
         console.log(`[${red('!')}] build ${bold(buildKey)} error: ${buildFailure.errors[key].text}`)
       }
