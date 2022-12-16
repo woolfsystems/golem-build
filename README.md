@@ -105,7 +105,7 @@ EXAMPLES
   $ golem build --config ./other.golem.json
 ```
 
-_See code: [dist/commands/build/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.2.8/dist/commands/build/index.ts)_
+_See code: [dist/commands/build/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.2.9/dist/commands/build/index.ts)_
 
 ## `golem help [COMMAND]`
 
@@ -375,5 +375,5 @@ EXAMPLES
   $ golem watch --config ./other.golem.json
 ```
 
-_See code: [dist/commands/watch/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.2.8/dist/commands/watch/index.ts)_
+_See code: [dist/commands/watch/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.2.9/dist/commands/watch/index.ts)_
 <!-- commandsstop -->
