@@ -36,7 +36,7 @@ export class ChildWatchCommand {
       }
 
       case 'log': {
-        console.log(`[${blue('?')}] (${bold(this.buildKey)}) log ${bold(this.watchCommand)}: ${JSON.stringify(event?.data?.colour || event)}`)
+        console.log(`[${blue('?')}] (${bold(this.buildKey)}) log ${bold(this.watchCommand)}: ${event?.data?.colour || JSON.stringify(event)}`)
         break
       }
 
