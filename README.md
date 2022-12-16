@@ -22,7 +22,7 @@ $ npm install -g @fnord/golem
 $ golem COMMAND
 running command...
 $ golem (--version)
-@fnord/golem/0.2.6 linux-x64 node-v16.18.0
+@fnord/golem/0.2.7 linux-x64 node-v16.18.0
 $ golem --help [COMMAND]
 USAGE
   $ golem COMMAND
@@ -105,7 +105,7 @@ EXAMPLES
   $ golem build --config ./other.golem.json
 ```
 
-_See code: [dist/commands/build/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.2.6/dist/commands/build/index.ts)_
+_See code: [dist/commands/build/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.2.7/dist/commands/build/index.ts)_
 
 ## `golem help [COMMAND]`
 
@@ -375,5 +375,5 @@ EXAMPLES
   $ golem watch --config ./other.golem.json
 ```
 
-_See code: [dist/commands/watch/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.2.6/dist/commands/watch/index.ts)_
+_See code: [dist/commands/watch/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.2.7/dist/commands/watch/index.ts)_
 <!-- commandsstop -->
