@@ -106,15 +106,3 @@ export const buildProject = (projectDef: GolemProject, watch?: boolean): Promise
       resolve(buildHandlerList)
     })
   })
-
-// buildProject(local_project_def as GolemProject).then(()=>{
-//     const [endTimeSs,endTimeNs] = process.hrtime(startTime)
-//     const endTimeMs = (endTimeNs / 1000000).toFixed(2)
-//     console.log(`[${clc.yellowBright('=')}] ${endTimeSs>0?`${endTimeSs}s `:''}${endTimeMs}ms`)
-// }).catch(([buildKey,buildFailure])=>{
-//     for(let key in buildFailure.errors){
-//         console.log(`[${clc.red('!')}] build ${clc.bold(buildKey)} error: ${buildFailure.errors[key].text}`)
-//     }
-//     console.log(`[${clc.red('=')}] terminating early`)
-//     process.exit(1)
-// })
