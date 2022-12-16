@@ -17,8 +17,7 @@ export default class Watch extends Command {
   static args = []
 
   async run(): Promise<any> {
-    const VERSION = '0.0.1'
-    console.log(`${white.bold('golem')}${yellow('@')}${VERSION}`)
+    console.log(`${white.bold('golem')}${yellow('@')}${this.config.version}`)
     const {flags} = await this.parse(Watch)
     const projectDefinition = await loadProjectFile(flags?.config || DEFAULT_CONFIG_PATH)
 
