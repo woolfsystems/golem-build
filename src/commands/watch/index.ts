@@ -23,7 +23,7 @@ export default class Watch extends Command {
 
     buildProject(projectDefinition, true).catch(([buildKey, buildFailure]) => {
       for (const key in buildFailure.errors) {
-        console.log(`[${red('!')}] build ${bold(buildKey)} error: ${buildFailure.errors[key].text}`)
+        console.log(`[${red('!')}] (${bold(buildKey)}) build error: ${buildFailure.errors[key].text}`)
       }
 
       console.log(`[${red('=')}] terminating early`)

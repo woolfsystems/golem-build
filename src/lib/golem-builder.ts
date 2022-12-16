@@ -64,17 +64,17 @@ export const buildProject = (projectDef: GolemProject, watch?: boolean): Promise
         outfile: `${outDir}/${outfile}`,
         ...defaultBuild,
         watch: watch ? {
-          onRebuild(error: BuildFailure|null, result: BuildResult|null) {
+          onRebuild(error: BuildFailure|null, _result: BuildResult|null) {
             if (error) {
-              console.log(`[${red('!')}] watch build ${bold(key)}: ${error}`)
+              console.log(`[${red('!')}] (${bold(key)}) watch build: ${error}`)
             } else {
-              console.log(`[${green('+')}] watch build ${bold(key)}: ${result?.outputFiles?.join(',')}`)
+              console.log(`[${green('+')}] (${bold(key)}) watch build: ok`)
             }
           },
         } : undefined,
       }
 
-      console.log(`[${blue('-')}] ${watch ? 'watch' : 'start'} ${bold(key)}`)
+      console.log(`[${blue('-')}] (${bold(key)}) ${watch ? 'watch' : 'start'}`)
 
       return build(appBuild)
       .then((result: BuildResult) =>
@@ -93,7 +93,7 @@ export const buildProject = (projectDef: GolemProject, watch?: boolean): Promise
 
         const project = projectDef.builds[key]
 
-        console.log(`[${green('+')}] ${watch ? 'watching' : 'built'} ${bold(key)}`)
+        console.log(`[${green('+')}] (${bold(key)}) ${watch ? 'watching' : 'built'}`)
         if (watch && project?.watchCmd) {
           const watcher = new ChildWatchCommand(key, project.watchCmd)
           watcher.start()
