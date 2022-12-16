@@ -64,7 +64,7 @@ If you had a `src` folder with 2 subfolders: `client`, and `server`, you might c
             "bundle": true,
             "outfile": "public/index.js",
             "requires": ["frontend"],
-            "watch": "nodemon"
+            "watchCmd": "nodemon"
         }
     }
 }
