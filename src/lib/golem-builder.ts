@@ -95,7 +95,7 @@ export const buildProject = (projectDef: GolemProject, watch?: boolean): Promise
 
         console.log(`[${green('+')}] ${watch ? 'watching' : 'built'} ${bold(key)}`)
         if (watch && project?.watchCmd) {
-          const watcher = new ChildWatchCommand(project.watchCmd)
+          const watcher = new ChildWatchCommand(key, project.watchCmd)
           watcher.start()
           return [key, watcher]
         }

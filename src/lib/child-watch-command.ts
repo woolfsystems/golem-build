@@ -11,36 +11,38 @@ interface ChildEvent {
 export class ChildWatchCommand {
   private app: ChildProcess | undefined
   private watchCommand: string
+  private buildKey: string
   private startCount = 0
 
-  constructor(watchCommand: string) {
+  constructor(buildKey: string, watchCommand: string) {
+    this.buildKey = buildKey
     this.watchCommand = watchCommand
   }
 
   start(): void {
-    console.log(`[${green('-')}] starting ${bold(this.watchCommand)}`)
+    console.log(`[${green('-')}] (${bold(this.buildKey)}) starting ${bold(this.watchCommand)}`)
     this.app = this.runWatchCommand(this.watchCommand)
     this.app.on('message', (event: ChildEvent) => {
       switch (event.type) {
       case 'start': {
         this.startCount++
-        console.log(`[${green('+')}] ${this.startCount > 1 ? 'restarted' : 'started'} ${bold(this.watchCommand)}`)
+        console.log(`[${green('+')}] (${bold(this.buildKey)}) ${this.startCount > 1 ? 'restarted' : 'started'} ${bold(this.watchCommand)}`)
         break
       }
 
       case 'crash': {
-        console.log(`[${red('!')}] crashed ${bold(this.watchCommand)}`)
+        console.log(`[${red('!')}] (${bold(this.buildKey)}) crashed ${bold(this.watchCommand)}`)
         break
       }
 
       case 'log': {
-        console.log(`[${blue('?')}] log ${bold(this.watchCommand)}: ${JSON.stringify(event?.data?.message || event)}`)
+        console.log(`[${blue('?')}] (${bold(this.buildKey)}) log ${bold(this.watchCommand)}: ${JSON.stringify(event?.data?.message || event)}`)
         break
       }
 
       default: {
         if (VERBOSE_LOGGING) {
-          console.log(`[${blue('?')}] verbose ${bold(this.watchCommand)}: ${JSON.stringify(event?.data || event)}`)
+          console.log(`[${blue('?')}] (${bold(this.buildKey)}) verbose ${bold(this.watchCommand)}: ${JSON.stringify(event?.data || event)}`)
         }
 
         break
@@ -52,7 +54,7 @@ export class ChildWatchCommand {
 
   exit(): void {
     if (this?.app) {
-      console.log(`[${green('+')}] exiting: ${this.watchCommand}`)
+      console.log(`[${green('+')}] (${bold(this.buildKey)}) exiting: ${this.watchCommand}`)
       this.app.send('quit')
     }
   }
