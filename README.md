@@ -24,6 +24,21 @@ golem@x.x.x
 [-] start backend
 [+] built frontend
 [+] built backend
+
+$ golem watch
+golem@x.x.x
+[-] watch frontend
+[-] watch backend
+[+] watching frontend
+[+] watching backend
+[-] (backend) starting nodemon
+[+] (backend) started nodemon
+[?] (backend) log nodemon: "2.0.20"
+[?] (backend) log nodemon: "to restart at any time, enter `rs`"
+[?] (backend) log nodemon: "watching path(s): *.*"
+[?] (backend) log nodemon: "watching extensions: js,mjs,json"
+[?] (backend) log nodemon: "starting `node dist/index.js`"
+...
 $ golem --help [COMMAND]
 USAGE
   $ golem COMMAND
