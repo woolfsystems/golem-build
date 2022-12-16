@@ -1,7 +1,7 @@
 golem
 =================
 
-multi project build manager
+multi project build manager for esbuild
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Known Vulnerabilities](https://snyk.io/test/github/woolfsystems/golem-build/badge.svg)](https://snyk.io/test/github/woolfsystems/golem-build)
@@ -31,7 +31,7 @@ USAGE
 <!-- usagestop -->
 ---
 # Configuration
-If you had a `src` folder with 2 subfolders: client, and server, you might configure your project by putting the following in `config.golem.json` at the root of your project:
+If you had a `src` folder with 2 subfolders: `client`, and `server`, you might configure your project by putting the following in `config.golem.json` at the root of your project:
 ```json
 {
     "baseDir": "src",

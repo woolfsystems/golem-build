@@ -1,6 +1,13 @@
 import {blue, bold, green, red} from 'cli-color'
 import {ChildProcess, spawn} from 'node:child_process'
 
+const VERBOSE_LOGGING = false
+
+interface ChildEvent {
+  type: 'start'|'crash'|'log'
+  data?: Record<string, any>
+}
+
 export class ChildWatchCommand {
   private app: ChildProcess | undefined
   private watchCommand: string
@@ -13,14 +20,32 @@ export class ChildWatchCommand {
   start(): void {
     console.log(`[${green('-')}] starting ${bold(this.watchCommand)}`)
     this.app = this.runWatchCommand(this.watchCommand)
-    this.app.on('message', (event: Event) => {
-      if (event.type === 'start') {
+    this.app.on('message', (event: ChildEvent) => {
+      switch (event.type) {
+      case 'start': {
         this.startCount++
         console.log(`[${green('+')}] ${this.startCount > 1 ? 'restarted' : 'started'} ${bold(this.watchCommand)}`)
-      } else if (event.type === 'crash') {
+        break
+      }
+
+      case 'crash': {
         console.log(`[${red('!')}] crashed ${bold(this.watchCommand)}`)
-      } else {
-        console.log(`[${blue('?')}] info ${bold(this.watchCommand)}: ${JSON.stringify(event)}`)
+        break
+      }
+
+      case 'log': {
+        console.log(`[${blue('?')}] info ${bold(this.watchCommand)}: ${JSON.stringify(event.data)}`)
+        break
+      }
+
+      default: {
+        if (VERBOSE_LOGGING) {
+          console.log(`[${blue('?')}] verbose ${bold(this.watchCommand)}: ${JSON.stringify(event?.data || event)}`)
+        }
+
+        break
+      }
+      // No default
       }
     })
   }
