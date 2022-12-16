@@ -4,8 +4,9 @@ import {ChildProcess, spawn} from 'node:child_process'
 const VERBOSE_LOGGING = false
 
 interface ChildEvent {
-  type: 'start'|'crash'|'log'
+  type: 'start'|'crash'|'log'|'info'
   data?: Record<string, any>
+  message?: string
 }
 
 export class ChildWatchCommand {
@@ -33,8 +34,13 @@ export class ChildWatchCommand {
         break
       }
 
+      case 'info': {
+        console.log(`[${blue('?')}] info ${bold(this.watchCommand)}: ${JSON.stringify(event?.message || event)}`)
+        break
+      }
+
       case 'log': {
-        console.log(`[${blue('?')}] info ${bold(this.watchCommand)}: ${JSON.stringify(event.data)}`)
+        console.log(`[${blue('?')}] log ${bold(this.watchCommand)}: ${JSON.stringify(event?.data || event)}`)
         break
       }
 
