@@ -6,6 +6,8 @@ import {build, LogLevel, BuildOptions, BuildFailure, BuildResult} from 'esbuild'
 import {green, red, blue, bold} from 'cli-color'
 import {readFile} from 'node:fs/promises'
 
+export const DEFAULT_CONFIG_PATH = 'config.golem.json'
+
 export interface GolemProject {
     outDir: string
     baseDir: string
