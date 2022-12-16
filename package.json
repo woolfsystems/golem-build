@@ -1,6 +1,6 @@
 {
   "name": "@fnord/golem",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "esbuild manager",
   "author": "Tristram Woolf @woolfsystems",
   "bin": {
