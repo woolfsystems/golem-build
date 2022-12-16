@@ -14,7 +14,7 @@
             "bundle": true,
             "outfile": "public/index.js",
             "requires": ["frontend"],
-            "watch": "nodemon"
+            "watchCmd": "nodemon"
         }
     }
 }

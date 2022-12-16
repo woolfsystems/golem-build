@@ -5,14 +5,19 @@
 import {build, LogLevel, BuildOptions, BuildFailure, BuildResult} from 'esbuild'
 import {green, red, blue, bold} from 'cli-color'
 import {readFile} from 'node:fs/promises'
+import {ChildWatchCommand} from './child-watch-command'
 
 export const DEFAULT_CONFIG_PATH = 'config.golem.json'
+
+export interface GolemOptions {
+  watchCmd?: string
+}
 
 export interface GolemProject {
     outDir: string
     baseDir: string
     watchMode?: boolean
-    builds: Record<string, BuildOptions>
+    builds: Record<string, BuildOptions & GolemOptions>
 }
 
 const defaultBuild = {
@@ -26,7 +31,7 @@ export const loadProjectFile = async (fileName: string): Promise<GolemProject> =
 }
 
 // const startTime = process.hrtime()
-export const buildProject = (projectDef: GolemProject, watch?: boolean): Promise<PromiseSettledResult<void | (string | BuildResult)[]>[]> =>
+export const buildProject = (projectDef: GolemProject, watch?: boolean): Promise<[string, undefined|ChildWatchCommand][]> =>
   new Promise((resolve, reject) => {
     const {baseDir, outDir, builds} = projectDef as GolemProject
     const buildList = Object.keys(builds).map(key => {
@@ -80,16 +85,25 @@ export const buildProject = (projectDef: GolemProject, watch?: boolean): Promise
     })
 
     Promise.allSettled(buildList).then(resultList => {
-      resultList.forEach((buildResult: {status: string, value?: any}) => {
+      const buildHandlerList: [string, undefined|ChildWatchCommand][] = resultList.map((buildResult: {status: string, value?: any}) => {
+        const [key] = buildResult?.value || ['unknown', undefined]
         if (buildResult?.value === undefined) {
-          return
+          return [key, undefined]
         }
 
-        const [key] = buildResult?.value || ['unknown', undefined]
+        const project = projectDef.builds[key]
+
         console.log(`[${green('+')}] ${watch ? 'watching' : 'built'} ${bold(key)}`)
+        if (watch && project?.watchCmd) {
+          const watcher = new ChildWatchCommand(project.watchCmd)
+          watcher.start()
+          return [key, watcher]
+        }
+
+        return [key, undefined]
         // console.dir(buildResult)
       })
-      resolve(resultList)
+      resolve(buildHandlerList)
     })
   })
 

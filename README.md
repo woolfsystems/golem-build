@@ -96,13 +96,13 @@ USAGE
   $ golem build [-c <value>]
 
 FLAGS
-  -c, --config=<value>  Project file if not config.golem.ts
+  -c, --config=<value>  Project file if not config.golem.json
 
 DESCRIPTION
   Build project
 
 EXAMPLES
-  $ golem build --config ./other.golem.ts
+  $ golem build --config ./other.golem.json
 ```
 
 _See code: [dist/commands/build/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.2.4/dist/commands/build/index.ts)_
@@ -366,13 +366,13 @@ USAGE
   $ golem watch [-c <value>]
 
 FLAGS
-  -c, --config=<value>  Project file if not golem.config.ts
+  -c, --config=<value>  Project file if not config.golem.json
 
 DESCRIPTION
   Build project in watch mode
 
 EXAMPLES
-  $ golem watch --config ./other.ts
+  $ golem watch --config ./other.golem.json
 ```
 
 _See code: [dist/commands/watch/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.2.4/dist/commands/watch/index.ts)_
