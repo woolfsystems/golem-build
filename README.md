@@ -1,7 +1,7 @@
 golem
 =================
 
-esbuild project manager
+multi project build manager
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Known Vulnerabilities](https://snyk.io/test/github/woolfsystems/golem-build/badge.svg)](https://snyk.io/test/github/woolfsystems/golem-build)
