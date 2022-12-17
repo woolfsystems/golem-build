@@ -1,6 +1,5 @@
 import {blue, bold, green, red} from 'cli-color'
 import {ChildProcess, spawn} from 'node:child_process'
-import { resolve } from 'node:path'
 import {GolemBuild} from '../types/golem'
 
 const VERBOSE_LOGGING = false

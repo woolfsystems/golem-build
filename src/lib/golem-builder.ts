@@ -4,6 +4,7 @@ import {green, blue, bold, red} from 'cli-color'
 import {readFile} from 'node:fs/promises'
 import {ChildWatchCommand} from './child-watch-command'
 import {GolemBuildJob, GolemOptions, GolemProject, GolemProjectDefinition} from '../types/golem'
+import {writeFileSync} from 'node:fs'
 
 export const DEFAULT_CONFIG_PATH = 'config.golem.json'
 
@@ -19,6 +20,10 @@ export const buildJob = async (_build: GolemOptions) => {
 
 export const watchJob = async (_build: GolemOptions) => {
   //
+}
+
+export const writeProjectFile = (path: string, projectDef: GolemProjectDefinition): void => {
+  writeFileSync(path, JSON.stringify(projectDef))
 }
 
 // const startTime = process.hrtime()
