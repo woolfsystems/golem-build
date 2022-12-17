@@ -1,6 +1,6 @@
 {
-    "baseDir": "src",
-    "outDir": "dist",
+    "baseDir": "../boilerplate-golem/src",
+    "outDir": "tmp",
     "watchMode": true,
     "builds": {
         "frontend": {

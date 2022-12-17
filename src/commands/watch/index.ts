@@ -22,7 +22,7 @@ export default class Watch extends Command {
     const projectDefinition = await loadProjectFile(flags?.config || DEFAULT_CONFIG_PATH)
 
     buildProject(projectDefinition, true)
-    .catch(([buildKey, buildFailure]) => {
+    .catch(([buildKey, _, buildFailure]) => {
       for (const key in buildFailure.errors) {
         console.log(`[${red('!')}] (${bold(buildKey)}) build error: ${buildFailure.errors[key].text}`)
       }
