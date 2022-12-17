@@ -17,7 +17,7 @@
     "/oclif.manifest.json"
   ],
   "dependencies": {
-    "@oclif/core": "^1.21.0",
+    "@oclif/core": "^1.22.0",
     "@oclif/plugin-help": "^5",
     "@oclif/plugin-plugins": "^2.1.8"
   },
@@ -29,7 +29,7 @@
     "@types/node": "^16.18.7",
     "chai": "^4",
     "cli-color": "^2.0.3",
-    "esbuild": "^0.16.7",
+    "esbuild": "^0.16.8",
     "eslint": "^7.32.0",
     "eslint-config-oclif": "^4",
     "eslint-config-oclif-typescript": "^1.0.3",
