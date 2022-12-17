@@ -91,7 +91,7 @@ the destination file or file pattern for non-bundled builds.
 <!-- commands -->
 * [`golem build`](#golem-build)
 * [`golem help [COMMAND]`](#golem-help-command)
-* [`golem init [BASEDIR] [OUTDIR]`](#golem-init-basedir-outdir)
+* [`golem init BASEDIR OUTDIR`](#golem-init-basedir-outdir)
 * [`golem plugins`](#golem-plugins)
 * [`golem plugins:install PLUGIN...`](#golem-pluginsinstall-plugin)
 * [`golem plugins:inspect PLUGIN...`](#golem-pluginsinspect-plugin)
@@ -121,7 +121,7 @@ EXAMPLES
   $ golem build --config ./other.golem.json
 ```
 
-_See code: [dist/commands/build/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.0/dist/commands/build/index.ts)_
+_See code: [dist/commands/build/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.1/dist/commands/build/index.ts)_
 
 ## `golem help [COMMAND]`
 
@@ -143,13 +143,17 @@ DESCRIPTION
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.19/src/commands/help.ts)_
 
-## `golem init [BASEDIR] [OUTDIR]`
+## `golem init BASEDIR OUTDIR`
 
 Initialise project
 
 ```
 USAGE
   $ golem init [BASEDIR] [OUTDIR] [-c <value>]
+
+ARGUMENTS
+  BASEDIR  base source directory
+  OUTDIR   build output directory
 
 FLAGS
   -c, --config=<value>  Project file if not config.golem.json
@@ -161,7 +165,7 @@ EXAMPLES
   $ golem init <BASE_DIR> <OUT_DIR>
 ```
 
-_See code: [dist/commands/init/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.0/dist/commands/init/index.ts)_
+_See code: [dist/commands/init/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.1/dist/commands/init/index.ts)_
 
 ## `golem plugins`
 
@@ -411,5 +415,5 @@ EXAMPLES
   $ golem watch --config ./other.golem.json
 ```
 
-_See code: [dist/commands/watch/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.0/dist/commands/watch/index.ts)_
+_See code: [dist/commands/watch/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.1/dist/commands/watch/index.ts)_
 <!-- commandsstop -->
