@@ -14,8 +14,8 @@ export default class Init extends Command {
   }
 
   static args = [
-    {name: 'baseDir'},
-    {name: 'outDir'},
+    {name: 'baseDir', required: true, description: 'base source directory'},
+    {name: 'outDir', required: true, description: 'build output directory'},
   ]
 
   async run(): Promise<any> {
@@ -24,14 +24,6 @@ export default class Init extends Command {
     const configPath = flags?.config || DEFAULT_CONFIG_PATH
     if (existsSync(configPath)) {
       throw new Error('config file already exists')
-    }
-
-    if (args?.baseDir === undefined) {
-      throw new Error('no base directory provided')
-    }
-
-    if (args?.outDir === undefined) {
-      throw new Error('no output directory provided')
     }
 
     if (!existsSync(args.baseDir)) {
