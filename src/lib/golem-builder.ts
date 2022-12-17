@@ -23,7 +23,7 @@ export const watchJob = async (_build: GolemOptions) => {
 }
 
 export const writeProjectFile = (path: string, projectDef: GolemProjectDefinition): void => {
-  writeFileSync(path, JSON.stringify(projectDef))
+  writeFileSync(path, JSON.stringify(projectDef, null, '  '))
 }
 
 // const startTime = process.hrtime()

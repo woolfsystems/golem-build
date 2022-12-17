@@ -1,20 +1,46 @@
 {
-    "baseDir": "../boilerplate-golem/src",
-    "outDir": "tmp",
-    "watchMode": true,
-    "builds": {
-        "frontend": {
-            "entryPoints": ["server/index.ts"],
-            "bundle": true,
-            "outfile": "index.js",
-            "platform": "node"
-        },
-        "backend": {
-            "entryPoints": ["client/index.tsx"],
-            "bundle": true,
-            "outfile": "public/index.js",
-            "requires": ["frontend"],
-            "watchCmd": "nodemon"
-        }
+  "baseDir": "../boilerplate-golem/src",
+  "outDir": "tmp",
+  "watchMode": true,
+  "builds": {
+    "frontend": {
+      "entryPoints": [
+        "server/index.ts"
+      ],
+      "bundle": true,
+      "outfile": "index.js",
+      "platform": "node"
+    },
+    "backend": {
+      "entryPoints": [
+        "client/index.tsx"
+      ],
+      "bundle": true,
+      "outfile": "public/index.js",
+      "requires": [
+        "frontend"
+      ],
+      "watchCmd": "nodemon"
+    },
+    "test": {
+      "platform": "browser",
+      "entryPoints": [
+        "src/index.ts"
+      ],
+      "outfile": "foo.js",
+      "bundle": true,
+      "minify": false,
+      "sourcemap": false
+    },
+    "foo": {
+      "platform": "browser",
+      "entryPoints": [
+        "src/index.ts"
+      ],
+      "outfile": "foo.js",
+      "bundle": true,
+      "minify": false,
+      "sourcemap": false
     }
+  }
 }
