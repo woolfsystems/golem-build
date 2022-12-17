@@ -99,6 +99,7 @@ the destination file or file pattern for non-bundled builds.
 ---
 # Commands
 <!-- commands -->
+* [`golem add`](#golem-add)
 * [`golem build`](#golem-build)
 * [`golem help [COMMAND]`](#golem-help-command)
 * [`golem init BASEDIR OUTDIR`](#golem-init-basedir-outdir)
@@ -112,6 +113,20 @@ the destination file or file pattern for non-bundled builds.
 * [`golem plugins:uninstall PLUGIN...`](#golem-pluginsuninstall-plugin-2)
 * [`golem plugins update`](#golem-plugins-update)
 * [`golem watch`](#golem-watch)
+
+## `golem add`
+
+add a build to the project
+
+```
+USAGE
+  $ golem add
+
+DESCRIPTION
+  add a build to the project
+```
+
+_See code: [dist/commands/add/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.2/dist/commands/add/index.ts)_
 
 ## `golem build`
 
@@ -131,7 +146,7 @@ EXAMPLES
   $ golem build --config ./other.golem.json
 ```
 
-_See code: [dist/commands/build/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.1/dist/commands/build/index.ts)_
+_See code: [dist/commands/build/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.2/dist/commands/build/index.ts)_
 
 ## `golem help [COMMAND]`
 
@@ -175,7 +190,7 @@ EXAMPLES
   $ golem init <BASE_DIR> <OUT_DIR>
 ```
 
-_See code: [dist/commands/init/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.1/dist/commands/init/index.ts)_
+_See code: [dist/commands/init/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.2/dist/commands/init/index.ts)_
 
 ## `golem plugins`
 
@@ -195,7 +210,7 @@ EXAMPLES
   $ golem plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.1.7/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.1.9/src/commands/plugins/index.ts)_
 
 ## `golem plugins:install PLUGIN...`
 
@@ -425,5 +440,5 @@ EXAMPLES
   $ golem watch --config ./other.golem.json
 ```
 
-_See code: [dist/commands/watch/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.1/dist/commands/watch/index.ts)_
+_See code: [dist/commands/watch/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.2/dist/commands/watch/index.ts)_
 <!-- commandsstop -->
