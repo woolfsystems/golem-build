@@ -18,12 +18,14 @@ multi project build manager for esbuild
 # Usage
 ```sh-session
 $ npm install -g @fnord/golem
+$ golem init src dist
+...
 $ golem add
 golem@x.x.x
 ? enter a name for the build frontend
 ? what is the build target browser
-? enter the path to the entrypoint (eg. client/index.tsx) src/index.tsx
-? enter the path to the output (eg. dist/index.js) dist/foo.js
+? enter the path to the entrypoint (eg. client/index.tsx) client/index.tsx
+? enter the path to the output (eg. dist/index.js) foo.js
 ? do you want the output bundled Yes
 ? do you want the output minified No
 ? do you want a sourcemap No
