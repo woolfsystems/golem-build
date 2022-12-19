@@ -104,7 +104,7 @@ the destination file or file pattern for non-bundled builds.
 * [`golem add`](#golem-add)
 * [`golem build`](#golem-build)
 * [`golem help [COMMAND]`](#golem-help-command)
-* [`golem init BASEDIR OUTDIR`](#golem-init-basedir-outdir)
+* [`golem init [BASEDIR] [OUTDIR]`](#golem-init-basedir-outdir)
 * [`golem plugins`](#golem-plugins)
 * [`golem plugins:install PLUGIN...`](#golem-pluginsinstall-plugin)
 * [`golem plugins:inspect PLUGIN...`](#golem-pluginsinspect-plugin)
@@ -128,7 +128,7 @@ DESCRIPTION
   add a build to the project
 ```
 
-_See code: [dist/commands/add/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.3/dist/commands/add/index.ts)_
+_See code: [dist/commands/add/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.4/dist/commands/add/index.ts)_
 
 ## `golem build`
 
@@ -148,7 +148,7 @@ EXAMPLES
   $ golem build --config ./other.golem.json
 ```
 
-_See code: [dist/commands/build/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.3/dist/commands/build/index.ts)_
+_See code: [dist/commands/build/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.4/dist/commands/build/index.ts)_
 
 ## `golem help [COMMAND]`
 
@@ -170,7 +170,7 @@ DESCRIPTION
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.19/src/commands/help.ts)_
 
-## `golem init BASEDIR OUTDIR`
+## `golem init [BASEDIR] [OUTDIR]`
 
 Initialise project
 
@@ -192,7 +192,7 @@ EXAMPLES
   $ golem init <BASE_DIR> <OUT_DIR>
 ```
 
-_See code: [dist/commands/init/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.3/dist/commands/init/index.ts)_
+_See code: [dist/commands/init/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.4/dist/commands/init/index.ts)_
 
 ## `golem plugins`
 
@@ -442,5 +442,5 @@ EXAMPLES
   $ golem watch --config ./other.golem.json
 ```
 
-_See code: [dist/commands/watch/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.3/dist/commands/watch/index.ts)_
+_See code: [dist/commands/watch/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.4/dist/commands/watch/index.ts)_
 <!-- commandsstop -->
