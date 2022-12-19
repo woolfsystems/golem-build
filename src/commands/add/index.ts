@@ -13,7 +13,7 @@ export class Add extends Command {
     const projectDef = await loadProjectFile(DEFAULT_CONFIG_PATH)
 
     const prompt = createPromptModule()
-    const {name, platform, outfile, bundle, minify, entrypoint, sourcemap} = await prompt([
+    const {name, platform, outfile, bundle, minify, entrypoint, sourcemap, watchCmd} = await prompt([
       {
         name: 'name',
         message: 'enter a name for the build',
@@ -50,6 +50,11 @@ export class Add extends Command {
         type: 'input',
       },
       {
+        name: 'watchCmd',
+        message: 'enter command to run in watch mode (eg. nodemon)',
+        type: 'input',
+      },
+      {
         name: 'bundle',
         message: 'do you want the output bundled',
         type: 'confirm',
@@ -77,6 +82,7 @@ export class Add extends Command {
         bundle,
         minify,
         sourcemap,
+        watchCmd
       },
     }
 
