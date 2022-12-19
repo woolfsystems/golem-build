@@ -18,7 +18,7 @@ multi project build manager for esbuild
 # Usage
 ```sh-session
 $ npm install -g @fnord/golem
-$ golem init src dist
+$ golem init
 ...
 $ golem add
 golem@x.x.x
