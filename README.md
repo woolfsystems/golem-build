@@ -128,7 +128,7 @@ DESCRIPTION
   add a build to the project
 ```
 
-_See code: [dist/commands/add/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.5/dist/commands/add/index.ts)_
+_See code: [dist/commands/add/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.6/dist/commands/add/index.ts)_
 
 ## `golem build`
 
@@ -148,7 +148,7 @@ EXAMPLES
   $ golem build --config ./other.golem.json
 ```
 
-_See code: [dist/commands/build/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.5/dist/commands/build/index.ts)_
+_See code: [dist/commands/build/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.6/dist/commands/build/index.ts)_
 
 ## `golem help [COMMAND]`
 
@@ -192,7 +192,7 @@ EXAMPLES
   $ golem init <BASE_DIR> <OUT_DIR>
 ```
 
-_See code: [dist/commands/init/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.5/dist/commands/init/index.ts)_
+_See code: [dist/commands/init/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.6/dist/commands/init/index.ts)_
 
 ## `golem plugins`
 
@@ -442,5 +442,5 @@ EXAMPLES
   $ golem watch --config ./other.golem.json
 ```
 
-_See code: [dist/commands/watch/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.5/dist/commands/watch/index.ts)_
+_See code: [dist/commands/watch/index.ts](https://github.com/woolfsystems/golem-build/blob/v0.4.6/dist/commands/watch/index.ts)_
 <!-- commandsstop -->
