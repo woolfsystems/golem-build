@@ -14,8 +14,8 @@ export default class Init extends Command {
   }
 
   static args = [
-    {name: 'baseDir', required: true, description: 'base source directory'},
-    {name: 'outDir', required: true, description: 'build output directory'},
+    {name: 'baseDir', required: false, description: 'base source directory'},
+    {name: 'outDir', required: false, description: 'build output directory'},
   ]
 
   async run(): Promise<any> {
@@ -26,13 +26,13 @@ export default class Init extends Command {
       throw new Error('config file already exists')
     }
 
-    if (!existsSync(args.baseDir)) {
+    if (args.baseDir && !existsSync(args.baseDir)) {
       throw new Error("base directory doesn't exist")
     }
 
     const projectDef = {
-      baseDir: args.baseDir,
-      outDir: args.outDir,
+      baseDir: args.baseDir || '.',
+      outDir: args.outDir || 'dist',
       builds: {},
     }
 
