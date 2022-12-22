@@ -1,5 +1,6 @@
+/* eslint-disable prefer-promise-reject-errors */
 /* eslint-disable unicorn/no-array-reduce */
-import {bold, green, red} from 'cli-color'
+import {blue, bold, green, red} from 'cli-color'
 import {build, BuildFailure, BuildOptions, BuildResult, LogLevel} from 'esbuild'
 import {EventEmitter} from 'node:stream'
 import {ChildWatchCommand} from '../lib/child-watch-command'
@@ -47,6 +48,45 @@ export class GolemProject {
     }
     this.builds = Object.keys(builds).map((key: string) =>
       new GolemBuild(key, builds[key], this.options))
+  }
+
+  watchBuild(build: GolemBuild): Promise<any> {
+    console.log(`[${blue('i')}] (${bold(build.id)}) watch`)
+
+    return build.watch()
+    .then((result: BuildResult) =>
+      new Promise((resolve, reject) => {
+        if (build?.watchCmd) {
+          const watcher = new ChildWatchCommand(build.id, build.watchCmd)
+          watcher.start(build).then(() => {
+            resolve([build.id, build, 'ok'])
+          }).catch(error => {
+            reject([build.id, build, error])
+          }).finally(() => {
+            if (result?.stop !== undefined)
+              result.stop()
+          })
+        } else {
+          console.log(`[${green('+')}] (${bold(build.id)}) no watch command`)
+          resolve([build.id, build, result])
+        }
+      }))
+    .catch((error: BuildFailure) => {
+      return [build.id, build, error]
+    })
+  }
+
+  runBuild(build: GolemBuild): Promise<any> {
+    console.log(`[${blue('i')}] (${bold(build.id)}) start`)
+
+    return build.run()
+    .then((result: BuildResult) =>
+      [build.id, build, result])
+    .catch((error: BuildFailure) => {
+      const errorMessages = error?.errors.map(error => (error !== undefined && (error?.text || ''))).join(' ,')
+      console.log(`[${red('!')}] (${bold(build.id)}) build failed: ${errorMessages}`)
+      return [build.id, build, error]
+    })
   }
 }
 

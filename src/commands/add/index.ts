@@ -82,7 +82,7 @@ export class Add extends Command {
         bundle,
         minify,
         sourcemap,
-        watchCmd
+        watchCmd,
       },
     }
 

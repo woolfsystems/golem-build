@@ -1,5 +1,5 @@
 {
-  "baseDir": "../boilerplate-golem/src",
+  "baseDir": "test/project",
   "outDir": "tmp",
   "watchMode": true,
   "builds": {
@@ -21,26 +21,6 @@
         "frontend"
       ],
       "watchCmd": "nodemon"
-    },
-    "test": {
-      "platform": "browser",
-      "entryPoints": [
-        "src/index.ts"
-      ],
-      "outfile": "foo.js",
-      "bundle": true,
-      "minify": false,
-      "sourcemap": false
-    },
-    "foo": {
-      "platform": "browser",
-      "entryPoints": [
-        "src/index.ts"
-      ],
-      "outfile": "foo.js",
-      "bundle": true,
-      "minify": false,
-      "sourcemap": false
     }
   }
 }

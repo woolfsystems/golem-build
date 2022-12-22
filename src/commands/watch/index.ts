@@ -1,6 +1,6 @@
 /* eslint-disable guard-for-in */
 import {Command, Flags} from '@oclif/core'
-import {buildProject, loadProjectFile, DEFAULT_CONFIG_PATH} from '../../lib/golem-builder'
+import {watchProject, loadProjectFile, DEFAULT_CONFIG_PATH} from '../../lib/golem-builder'
 import {red, bold, yellow, white} from 'cli-color'
 
 export default class Watch extends Command {
@@ -21,7 +21,7 @@ export default class Watch extends Command {
     const {flags} = await this.parse(Watch)
     const projectDefinition = await loadProjectFile(flags?.config || DEFAULT_CONFIG_PATH)
 
-    buildProject(projectDefinition, true)
+    watchProject(projectDefinition)
     .catch(([buildKey, _, buildFailure]) => {
       for (const key in buildFailure.errors) {
         console.log(`[${red('!')}] (${bold(buildKey)}) build error: ${buildFailure.errors[key].text}`)
