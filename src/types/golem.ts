@@ -53,9 +53,9 @@ export class GolemProject {
   watchBuild(build: GolemBuild): Promise<any> {
     console.log(`[${blue('i')}] (${bold(build.id)}) watch`)
 
-    return build.watch()
-    .then((result: BuildResult) =>
-      new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
+      build.watch()
+      .then((result: BuildResult) => {
         if (build?.watchCmd) {
           const watcher = new ChildWatchCommand(build.id, build.watchCmd)
           watcher.start(build).then(() => {
@@ -70,22 +70,25 @@ export class GolemProject {
           console.log(`[${green('+')}] (${bold(build.id)}) no watch command`)
           resolve([build.id, build, result])
         }
-      }))
-    .catch((error: BuildFailure) => {
-      return [build.id, build, error]
+      })
+      .catch((error: BuildFailure) => {
+        reject([build.id, build, error])
+      })
     })
   }
 
   runBuild(build: GolemBuild): Promise<any> {
     console.log(`[${blue('i')}] (${bold(build.id)}) start`)
 
-    return build.run()
-    .then((result: BuildResult) =>
-      [build.id, build, result])
-    .catch((error: BuildFailure) => {
-      const errorMessages = error?.errors.map(error => (error !== undefined && (error?.text || ''))).join(' ,')
-      console.log(`[${red('!')}] (${bold(build.id)}) build failed: ${errorMessages}`)
-      return [build.id, build, error]
+    return new Promise((resolve, reject) => {
+      build.run()
+      .then((result: BuildResult) =>
+        resolve([build.id, build, result]))
+      .catch((error: BuildFailure) => {
+        const errorMessages = error?.errors.map(error => (error !== undefined && (error?.text || ''))).join(' ,')
+        console.log(`[${red('!')}] (${bold(build.id)}) build failed: ${errorMessages}`)
+        reject([build.id, build, error])
+      })
     })
   }
 }

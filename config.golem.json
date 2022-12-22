@@ -20,7 +20,7 @@
       "requires": [
         "frontend"
       ],
-      "watchCmd": "nodemon"
+      "watchCmd": "nodemon tmp/index.js"
     }
   }
 }
