@@ -19,7 +19,7 @@
   "dependencies": {
     "@oclif/core": "^1.23.1",
     "@oclif/plugin-help": "^5",
-    "@oclif/plugin-plugins": "^2.1.12",
+    "@oclif/plugin-plugins": "^2.2.2",
     "inquirer": "^8.2.5"
   },
   "devDependencies": {
