@@ -23,7 +23,7 @@
     "inquirer": "^8.2.5"
   },
   "devDependencies": {
-    "@oclif/test": "^2.3.4",
+    "@oclif/test": "^2.3.11",
     "@types/chai": "^4",
     "@types/cli-color": "^2.0.2",
     "@types/inquirer": "^9.0.3",
